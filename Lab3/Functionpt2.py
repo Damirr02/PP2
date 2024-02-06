@@ -24,6 +24,16 @@ def average_score(movies):
     for movie in movies:
         average+=movie["imdb"]
     print(average/len(movies))
+
+# Ex 5
+def average_category(category):
+    average = 0
+    count = 0
+    for movie in movies:
+        if movie["category"] == category:
+            count += 1
+            average+=movie["imdb"]
+    print(average / count, category )   
         
 movies = [
 {
@@ -104,6 +114,13 @@ movies = [
 ]               
 for movie in movies:
     print_highly_rated_movie(movie)
+    
 sublist(movies)
+
 names(movies)
+
 average_score(movies)
+
+categories = set(movie["category"] for movie in movies)
+for category in categories:
+    average_category(category)
