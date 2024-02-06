@@ -14,9 +14,9 @@ def sublist(movies):
     print(goodmovies)
 
 # Ex 3
-def names(movies):
-    for movie in movies:
-        print(movie["name"])
+def filter_movies_by_category(category):
+    filtered_movies = [movie["name"] for movie in movies if movie["category"] == category]
+    print(filtered_movies, " - ", category)
         
 # Ex 4
 def average_score(movies):
@@ -117,7 +117,9 @@ for movie in movies:
     
 sublist(movies)
 
-names(movies)
+categories = set(movie["category"] for movie in movies)
+for category in categories:
+    filter_movies_by_category(category)
 
 average_score(movies)
 
